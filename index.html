@@ -32,8 +32,14 @@
 
     <!-- Boostrap Navbar -->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-center">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Weather Dashboard</a>
+        <!-- created a search bar -->
+        <form class="form-inline d-flex justify-content-right">
+            <input class="form-control" type="search" placeholder="City, State or Zip" aria-label="Search">
+            <!-- added margin left by 3 to give it some space, look nicer -->
+            <button class="btn searchBtn btn-outline-dark ml-3" type="submit">Search</button>
+        </form>
     </nav>
 
     <!-- Bootstrap List -->
@@ -50,11 +56,22 @@
         </div>
     </div>
 
-    <!-- Boostrap Card -->
+    <!-- Bootstrap Card for current information -->
+
+    <div class="card">
+        <div class="card-body">
+            <p>Atlanta</p>
+            <p>Humidity</p>
+            <p>Wind Speed</p>
+            <p>UV Index</p>
+        </div>
+    </div>
+
+    <!-- Boostrap Card for 5 day weather -->
     <h1>5-day Forecast</h1>
 
     <div class="card" style="width: 18rem;">
-        <div class="card-body">
+        <div class="card-body weatherCard">
             <p>Date</p>
             <p>image of weather</p>
             <p>temp</p>

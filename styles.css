@@ -9,7 +9,7 @@
 
 .navbar {
     padding: 5;
-    background-color: rgba(22, 66, 224, 0.534) !important;
+    background-color: rgba(42, 118, 240, 0.534) !important;
     font-family: 'Marcellus SC', serif;
 
 }
@@ -17,4 +17,15 @@
 .fontStyle {
     font-family: 'Marcellus SC', serif;
 
+}
+
+.searchBtn {
+    background-color: rgb(196, 208, 224) !important;
+    font-weight: 700;
+}
+
+.weatherCard {
+    font-weight: 600;
+    font-size: 18px;
+    background-color: rgba(42, 118, 240, 0.534);
 }
