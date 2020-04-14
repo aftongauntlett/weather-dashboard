@@ -1,0 +1,20 @@
+.navbar-brand {
+    font-size: 35px;
+    font-weight: 800;
+    padding: 0;
+    font-family: 'Marcellus SC', serif;
+
+
+}
+
+.navbar {
+    padding: 5;
+    background-color: rgba(22, 66, 224, 0.534) !important;
+    font-family: 'Marcellus SC', serif;
+
+}
+
+.fontStyle {
+    font-family: 'Marcellus SC', serif;
+
+}
