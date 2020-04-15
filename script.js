@@ -18,11 +18,11 @@ function getWeather(cityName) {
 
             // use response.list to create a for loop for your 5 day forecast
 
-            $(".date").text("" + moment(response.list[0].dt_txt).format("MMM Do YY"));
+            $(".date").text("" + moment(response.list[0].dt_txt).format("MMM Do YYYY"));
             $(".city").text("" + response.city.name);
             $(".humidity").text("Humidity: " + response.list[0].main.humidity);
             // $(".uv").text("UV Index: " + );
-            // $("icon").text("" + response.weather.icon);
+            $(".wind").text("Wind Speed: " + response.list[0].wind.speed);
 
 
             // Converted the temp to fahrenheit
