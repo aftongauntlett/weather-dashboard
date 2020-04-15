@@ -2,7 +2,7 @@
     font-size: 35px;
     font-weight: 800;
     padding: 0;
-    font-family: 'Marcellus SC', serif;
+font-family: 'Montserrat', sans-serif;
 
 
 }
@@ -10,12 +10,12 @@
 .navbar {
     padding: 5;
     background-color: rgba(42, 118, 240, 0.534) !important;
-    font-family: 'Marcellus SC', serif;
+font-family: 'Montserrat', sans-serif;
 
 }
 
 .fontStyle {
-    font-family: 'Marcellus SC', serif;
+font-family: 'Montserrat', sans-serif;
 
 }
 
@@ -28,4 +28,15 @@
     font-weight: 600;
     font-size: 18px;
     background-color: rgba(42, 118, 240, 0.534);
+}
+
+.fiveDayCard {
+    margin: 20px;
+    background-color: rgba(150, 158, 230, 0.486);
+
+}
+
+h1 {
+    margin-left: 25px;
+
 }

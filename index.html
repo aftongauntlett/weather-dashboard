@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./styles.css">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
 
 
 
@@ -23,71 +23,109 @@
 
 <body class="fontStyle">
 
-    <!-- JS File -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Boostrap Navbar -->
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- added dflex justify to center it -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-center">
         <a class="navbar-brand" href="#">Weather Dashboard</a>
-        <!-- created a search bar -->
-        <form class="form-inline d-flex justify-content-right">
-            <input id="userInput" class="form-control" type="search" placeholder="City" aria-label="Search">
-            <!-- added margin left by 3 to give it some space, look nicer -->
-            <button id="searchBar" class="btn searchBtn btn-outline-dark ml-3" type="submit">Search</button>
-        </form>
     </nav>
+    <div class="row">
+        <div class="col-3">
+            <!-- added some padding to make it look nicer -->
+            <form class="form-inline pt-3 pb-3 pl-3">
+                <input id="userInput" class="form-control" type="search" placeholder="City" aria-label="Search">
 
-    <!-- Bootstrap List -->
-    <div container container>
-        <div row>
-            <div col-6>
-                <div class="list-group">
-                    <a href="#" id="chantilly" class="list-group-item list-group-item-action">Chantilly, VA</a>
-                    <a href="#" id="fairfax" class="list-group-item list-group-item-action">Fairfax, VA</a>
-                    <a href="#" id="richmond" class="list-group-item list-group-item-action">Richmond, VA</a>
-                    <a href="#" id="hendersonville" class="list-group-item list-group-item-action">Hendersonville,
-                        NC</a>
+                <!-- added margin left by 3 to give it some space, look nicer -->
+                <button id="searchBar" class="btn searchBtn btn-outline-dark ml-3" type="submit">Search</button>
+            </form>
+
+            <!-- Bootstrap List -->
+            <div class="list-group ">
+                <a href="#" id="chantilly" class="list-group-item list-group-item-action">Chantilly</a>
+                <a href="#" id="fairfax" class="list-group-item list-group-item-action">Fairfax</a>
+                <a href="#" id="richmond" class="list-group-item list-group-item-action">Richmond</a>
+                <a href="#" id="hendersonville" class="list-group-item list-group-item-action">Hendersonville</a>
+            </div>
+        </div>
+
+        <!-- Bootstrap Jumbotron for current information -->
+        <div class="col">
+            <div class="jumbotron jumbotron-fluid">
+                <p class="city">Atlanta</p>
+                <p>Humidity</p>
+                <p>Wind Speed</p>
+                <p>UV Index</p>
+            </div>
+
+
+
+            <!-- Boostrap Card for 5 day weather -->
+
+            <h1>5-day Forecast</h1>
+
+            <div class="card-group">
+                <div class="card fiveDayCard">
+                    <div class="card-body">
+                        <h5 class="card-title" id="firstDate"></h5>
+                        <p class="card-text" id="firstIcon"></p>
+                        <p class="card-text" id="firstTemp"></p>
+                        <p class="card-text" id="firstHumidity"></p>
+                        <p class="card-text" id="firstUpdate"><small class="text-muted"></small></p>
+                    </div>
+                </div>
+                <div class="card fiveDayCard">
+                    <div class="card-body">
+                        <h5 class="card-title" id="day2-date">date</h5>
+                        <p class="card-text" id="day2-icon">[ icon ]</p>
+                        <p class="card-text" id="day2-temp">temp: </p>
+                        <p class="card-text" id="day2-humidity">humidity: </p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card fiveDayCard">
+                    <div class="card-body">
+                        <h5 class="card-title" id="day3-date">date</h5>
+                        <p class="card-text" id="day3-icon">[ icon ]</p>
+                        <p class="card-text" id="day3-temp">temp: </p>
+                        <p class="card-text" id="day3-humidity">humidity: </p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card fiveDayCard">
+                    <div class="card-body">
+                        <h5 class="card-title" id="day4-date">date</h5>
+                        <p class="card-text" id="day4-icon">[ icon ]</p>
+                        <p class="card-text" id="day4-temp">temp: </p>
+                        <p class="card-text" id="day4-humidity">humidity: </p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card fiveDayCard">
+                    <div class="card-body">
+                        <h5 class="card-title" id="day5-date">date</h5>
+                        <p class="card-text" id="day5-icon">[ icon ]</p>
+                        <p class="card-text" id="day5-temp">temp: </p>
+                        <p class="card-text" id="day5-humidity">humidity: </p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Bootstrap Card for current information -->
 
-    <div class="card">
-        <div class="card-body">
-            <p>Atlanta</p>
-            <p>Humidity</p>
-            <p>Wind Speed</p>
-            <p>UV Index</p>
-        </div>
-    </div>
-
-    <!-- Boostrap Card for 5 day weather -->
-    <h1>5-day Forecast</h1>
-
-    <div class="card" style="width: 18rem;">
-        <div class="card-body weatherCard">
-            <p>Date</p>
-            <p>image of weather</p>
-            <p>temp</p>
-            <p>humidity</p>
-        </div>
-    </div>
-
-    <script type="text/javascript" src="script.js"></script>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="script.js"></script>
 
 </body>
 
