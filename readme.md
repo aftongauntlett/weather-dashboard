@@ -12,8 +12,3 @@ THEN I am again presented with current and future conditions for that city
 WHEN I open the weather dashboard
 THEN I am presented with the last searched city forecast
 
-
-
-
-Your API key is 2c10bee5201ad77237d10e6a96cc7389# weather-dashboard
-# weather-dashboard

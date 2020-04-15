@@ -16,9 +16,10 @@ function getWeather(cityName) {
     })
         .then(function (response) {
 
-            $(".date").text("" + response.list[0].dt_txt);
+            // use response.list to create a for loop for your 5 day forecast
+
+            $(".date").text("" + moment(response.list[0].dt_txt).format("MMM Do YY"));
             $(".city").text("" + response.city.name);
-            $(".feelsLike").text("Feels like: " + response.list[0].main.feels_like);
             $(".humidity").text("Humidity: " + response.list[0].main.humidity);
             // $(".uv").text("UV Index: " + );
             // $("icon").text("" + response.weather.icon);
@@ -27,10 +28,20 @@ function getWeather(cityName) {
             // Converted the temp to fahrenheit
             // used math.round to get rid of the decimals in the fahrenheit 
             var tempF = Math.round((response.list[0].main.temp - 273.15) * 1.80 + 32);
-            $(".tempF").text("Temperature " + tempF + ("°"));
+            $(".tempF").text("Temperature: " + tempF + ("°"));
 
             var feelsLikeF = Math.round((response.list[0].main.feels_like - 273.15) * 1.80 + 32);
-            $(".feelsLikeF").text("Feels like " + feelsLikeF + "°");
+            $(".feelsLikeF").text("Feels like: " + feelsLikeF + "°");
+
+            var i;
+            for (i = 0; i < fiveDayOne.length; i++) {
+                text += fiveDayOne.children[i] + "<br>";
+
+                // $("p").children().
+
+            }
+
+
         });
 
 }

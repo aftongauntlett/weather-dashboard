@@ -17,7 +17,7 @@
 
 
 
-    <title>Weather</title>
+    <title>Weather Dashboard</title>
 </head>
 <!-- set fontStyle to change the font of the entire page with one line -->
 
@@ -40,6 +40,7 @@
             </form>
 
             <!-- Bootstrap List -->
+            <!-- update this list to be a history, not pre-made -->
             <div class="list-group ">
                 <button id="chantilly" class="list-group-item list-group-item-action">Chantilly</button>
                 <button id="fairfax" class="list-group-item list-group-item-action">Fairfaix</button>
@@ -57,7 +58,9 @@
                 <p class="feelsLikeF"></p>
                 <p class="humidity"></p>
                 <p class="windSpeed"></p>
+                <!-- when UV is clicked, display a color that indicates favorable, moderate or severe -->
                 <p class="uv"></p>
+                <!-- icon representitive of current conditions -->
                 <p class="icon"></p>
 
 
@@ -69,50 +72,51 @@
 
             <h1>5-day Forecast</h1>
 
+            <!-- use response.list to create a for loop for your 5 day forecast -->
             <div class="card-group">
                 <div class="card fiveDayCard">
-                    <div class="card-body">
-                        <h5 class="card-title" id="firstDate"></h5>
-                        <p class="card-text" id="firstIcon"></p>
-                        <p class="card-text" id="firstTemp"></p>
-                        <p class="card-text" id="firstHumidity"></p>
-                        <p class="card-text" id="firstUpdate"><small class="text-muted"></small></p>
+                    <div class="card-body fiveDayOne">
+                        <p class="card-title" id="fiveDayDate"></p>
+                        <p class="card-text" id="fiveDayIcon"></p>
+                        <p class="card-text" id="fiveDayTemp"></p>
+                        <p class="card-text" id="fiveDayHumidity"></p>
+                        <p class="card-text" id="fiveDayUpdate"><small class="text-muted"></small></p>
                     </div>
                 </div>
                 <div class="card fiveDayCard">
-                    <div class="card-body">
-                        <h5 class="card-title" id="day2-date">date</h5>
-                        <p class="card-text" id="day2-icon">[ icon ]</p>
-                        <p class="card-text" id="day2-temp">temp: </p>
-                        <p class="card-text" id="day2-humidity">humidity: </p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <div class="card-body fiveDayTwo">
+                        <p class="card-title" id="fiveDayDate"></p>
+                        <p class="card-text" id="fiveDayIcon"></p>
+                        <p class="card-text" id="fiveDayTemp"></p>
+                        <p class="card-text" id="fiveDayHumidity"></p>
+                        <p class="card-text" id="fiveDayUpdate"><small class="text-muted"></small></p>
                     </div>
                 </div>
                 <div class="card fiveDayCard">
-                    <div class="card-body">
-                        <h5 class="card-title" id="day3-date">date</h5>
-                        <p class="card-text" id="day3-icon">[ icon ]</p>
-                        <p class="card-text" id="day3-temp">temp: </p>
-                        <p class="card-text" id="day3-humidity">humidity: </p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <div class="card-body fiveDayThree">
+                        <p class="card-title" id="fiveDayDate"></p>
+                        <p class="card-text" id="fiveDayIcon"></p>
+                        <p class="card-text" id="fiveDayTemp"></p>
+                        <p class="card-text" id="fiveDayHumidity"></p>
+                        <p class="card-text" id="fiveDayUpdate"><small class="text-muted"></small></p>
                     </div>
                 </div>
                 <div class="card fiveDayCard">
-                    <div class="card-body">
-                        <h5 class="card-title" id="day4-date">date</h5>
-                        <p class="card-text" id="day4-icon">[ icon ]</p>
-                        <p class="card-text" id="day4-temp">temp: </p>
-                        <p class="card-text" id="day4-humidity">humidity: </p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <div class="card-body fiveDayFour">
+                        <p class="card-title" id="fiveDayDate"></p>
+                        <p class="card-text" id="fiveDayIcon"></p>
+                        <p class="card-text" id="fiveDayTemp"></p>
+                        <p class="card-text" id="fiveDayHumidity"></p>
+                        <p class="card-text" id="fiveDayUpdate"><small class="text-muted"></small></p>
                     </div>
                 </div>
                 <div class="card fiveDayCard">
-                    <div class="card-body">
-                        <h5 class="card-title" id="day5-date">date</h5>
-                        <p class="card-text" id="day5-icon">[ icon ]</p>
-                        <p class="card-text" id="day5-temp">temp: </p>
-                        <p class="card-text" id="day5-humidity">humidity: </p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <div class="card-body fiveDayFive">
+                        <p class="card-title" id="fiveDayDate"></p>
+                        <p class="card-text" id="fiveDayIcon"></p>
+                        <p class="card-text" id="fiveDayTemp"></p>
+                        <p class="card-text" id="fiveDayHumidity"></p>
+                        <p class="card-text" id="fiveDayUpdate"><small class="text-muted"></small></p>
                     </div>
                 </div>
             </div>
@@ -122,6 +126,7 @@
 
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
