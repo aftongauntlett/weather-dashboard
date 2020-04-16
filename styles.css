@@ -24,14 +24,13 @@
 }
 
 .fiveDayCard {
-    margin: 20px;
     background-color: rgba(255, 245, 249, 0.815);
+    margin: 15px;
 }
 
 h1 {
-    margin-left: 25px;
-    background-color: rgba(255, 245, 249, 0.815);
-    padding: 20px;
+    text-align: left;
+ 
     
 }
 
@@ -62,16 +61,19 @@ h1 {
 
 #storedCities {
     background-color: rgba(255, 245, 249, 0.815);
+    margin-right: 25px;
+    margin-left: 25px;
 }
 
 .searchBtn {
     background-color: rgba(255, 245, 249, 0.815) !important;
 }
 
-body {
-    /* background-image: url(https://data.whicdn.com/images/197122776/original.gif); */
+
+/* body {
+    background-image: url(https://i.pinimg.com/originals/a3/06/7d/a3067db8cc83e0ebc0cae5dc5b713d62.jpg);
     background-size: 100%;
     background-repeat: no-repeat;
     
-}
+} */
 

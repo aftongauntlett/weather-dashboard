@@ -60,11 +60,15 @@ function getWeather(cityName) {
 
             var i;
             for (i = 0; i < fiveDay.length; i++) {
+
+                var fiveDayTempF = Math.round((fiveDay[i].main.temp - 273.15) * 1.80 + 32);
+
                 console.log(fiveDay[i]);
                 $("#fiveDay" + (i + 1)).append('<p class="card-text">' + moment(fiveDay[i].dt_txt).format("MMM Do, YYYY") + '</p>')
-                $("#fiveDay" + (i + 1)).append('<p class="card-text">' + fiveDay[i].main.temp + '</p>')
-                $("#fiveDay" + (i + 1)).append('<p class="card-text">' + fiveDay[i].main.humidity + '</p>')
+                $("#fiveDay" + (i + 1)).append('<p class="card-text">' + "Temperature: " + fiveDayTempF + ("°"), '</p>')
+                $("#fiveDay" + (i + 1)).append('<p class="card-text">' + "Humidity: " + fiveDay[i].main.humidity + '</p>')
                 $("#fiveDay" + (i + 1)).append('<p class="card-text">' + fiveDay[i].main.icon + '</p>')
+
 
             }
         });
@@ -76,16 +80,21 @@ $("form").submit(function (e) {
     e.preventDefault();
 });
 
+// created a function for what to happen when site is launched
 const currentCities = JSON.parse(localStorage.getItem("cities"));
 if (currentCities) {
     for (i = 0; i < currentCities.length; i++) {
+
+
         // console.log(currentCities[i])
         const currentCity = currentCities[i]
-        $("#storedCities").append(' <button id="' + "city" + i + '" class="btn searchBtn btn-sm ml-3">' + currentCity + '</button>');
+
+        // created buttons for locally stored cities
+        $("#storedCities").append(' <button id="' + "city" + i + '" class="btn btn-sm ml-3">' + currentCity + '</button>');
         $("#city" + i).click(function () {
             getWeather(currentCity);
+
         });
     }
-
 
 }

@@ -28,7 +28,7 @@
         <a class="navbar-brand" href="#">Weather Dashboard</a>
     </nav>
     <div class="row">
-        <div class="col-3">
+        <div class="col-12 col-md-3">
             <!-- added some padding to make it look nicer -->
             <form class="form-inline pt-3 pb-3 pl-3">
                 <input id="userInput" class="form-control" type="search" placeholder="City" aria-label="Search">
@@ -39,13 +39,14 @@
 
             <!-- Bootstrap List -->
             <!-- update this list to be a history, not pre-made -->
-
-            <div class="list-group pl-3" id="storedCities"></div>
+            <!-- moved this button to JS -->
+            <div class="list-group" id="storedCities"></div>
         </div>
 
         <!-- Bootstrap Jumbotron for current information -->
-        <div class="col">
+        <div class="col-12 col-md-9">
             <div class="jumbotron jumbotron-fluid">
+
                 <!-- combined city and date to have display side by side -->
                 <p class="cityDate"></p>
                 <div class="mainWeatherFont">
@@ -67,20 +68,20 @@
             <h1>5-day Forecast</h1>
 
             <!-- use response.list to create a for loop for your 5 day forecast -->
-            <div class="card-group" id="fiveDay">
-                <div class="card fiveDayCard">
+            <div class="row" id="fiveDay">
+                <div class="card fiveDayCard col-12 col-sm-6 col-lg-3 col-xl-2">
                     <div class="card-body" id="fiveDay1"> </div>
                 </div>
-                <div class="card fiveDayCard">
+                <div class="card fiveDayCard col-12 col-sm-6 col-lg-3 col-xl-2">
                     <div class="card-body" id="fiveDay2"> </div>
                 </div>
-                <div class="card fiveDayCard">
+                <div class="card fiveDayCard col-12 col-sm-6 col-lg-3 col-xl-2">
                     <div class="card-body" id="fiveDay3"> </div>
                 </div>
-                <div class="card fiveDayCard">
+                <div class="card fiveDayCard col-12 col-sm-6 col-lg-3 col-xl-2">
                     <div class="card-body" id="fiveDay4"> </div>
                 </div>
-                <div class="card fiveDayCard">
+                <div class="card fiveDayCard col-12 col-sm-6 col-lg-3 col-xl-2">
                     <div class="card-body" id="fiveDay5"> </div>
                 </div>
             </div>
