@@ -11,7 +11,6 @@ $("#searchBar").on("click", function () {
                 cities.push(currentCities[i])
             }
         }
-
     }
 
     localStorage.setItem("cities", JSON.stringify(cities))
@@ -37,10 +36,12 @@ function getWeather(cityName) {
 
             // use response.list to create a for loop for your 5 day forecast
             // combined city and date to have display side by side
+            $(".icon").html("<img src='http://openweathermap.org/img/w/" + response.list[0].weather[0].icon + ".png' alt='Icon depicting current weather.'>");
+            // $(".icon").text(response.list[0].weather[0].icon);
             $(".cityDate").text(" " + response.city.name + " " + moment(response.list[0].dt_txt).format("(MMM Do, YYYY)"));
-            $(".humidity").text("Humidity: " + response.list[0].main.humidity);
+            $(".humidity").text("Humidity: " + response.list[0].main.humidity + " %");
             // $(".uv").text("UV Index: " + );
-            $(".wind").text("Wind Speed: " + response.list[0].wind.speed);
+            $(".wind").text("Wind Speed: " + response.list[0].wind.speed + (" MPH"));
             // Converted the temp to fahrenheit
             // used math.round to get rid of the decimals in the fahrenheit 
             var tempF = Math.round((response.list[0].main.temp - 273.15) * 1.80 + 32);
@@ -60,15 +61,16 @@ function getWeather(cityName) {
 
             var i;
             for (i = 0; i < fiveDay.length; i++) {
+                $("#fiveDay" + (i + 1)).empty();
+
 
                 var fiveDayTempF = Math.round((fiveDay[i].main.temp - 273.15) * 1.80 + 32);
 
                 console.log(fiveDay[i]);
-                $("#fiveDay" + (i + 1)).append('<p class="card-text">' + moment(fiveDay[i].dt_txt).format("MMM Do, YYYY") + '</p>')
+                $("#fiveDay" + (i + 1)).append('<p class="card-text fiveDate">' + moment(fiveDay[i].dt_txt).format("MMM Do, YYYY") + '</p>')
                 $("#fiveDay" + (i + 1)).append('<p class="card-text">' + "Temperature: " + fiveDayTempF + ("°"), '</p>')
-                $("#fiveDay" + (i + 1)).append('<p class="card-text">' + "Humidity: " + fiveDay[i].main.humidity + '</p>')
-                $("#fiveDay" + (i + 1)).append('<p class="card-text">' + fiveDay[i].main.icon + '</p>')
-
+                $("#fiveDay" + (i + 1)).append('<p class="card-text">' + "Humidity: " + fiveDay[i].main.humidity + (" %"), '</p>')
+                $("#fiveDay" + (i + 1)).append('<p class="card-text">' + ("<img src='http://openweathermap.org/img/w/" + response.list[0].weather[0].icon + ".png' alt='Icon depicting current weather.'>"), + '</p>')
 
             }
         });
@@ -89,8 +91,8 @@ if (currentCities) {
         // console.log(currentCities[i])
         const currentCity = currentCities[i]
 
-        // created buttons for locally stored cities
-        $("#storedCities").append(' <button id="' + "city" + i + '" class="btn btn-sm ml-3">' + currentCity + '</button>');
+        // created buttons for locally stored cities, creates a new button for each city up to 6
+        $("#storedCities").append(' <button id="' + "city" + i + '" class="btn btn-sm ml-3 col-5">' + currentCity + '</button>');
         $("#city" + i).click(function () {
             getWeather(currentCity);
 
@@ -99,18 +101,14 @@ if (currentCities) {
 
 }
 
+// pull the first array in the previously searched city info from local storage when browser is opened, if no stored data - use the default "chantilly"
 
-// use this info to have the website load info for website launch
+var previousCity = JSON.parse(localStorage.getItem("cities"));
+if (!previousCity) {
+    previousCity = "Chantilly"
+}
+else {
+    previousCity = previousCity[0]
+}
 
-// function getFromStorage (){
-//     var storedData = localStorage.getItem("prevoiousCity");
-//     if(personalInfo){
-//         var personalinfo = JSON.parse(storedData)}
-//         else {
-// var personalInfo ={}
-//         }
-//     }
-
-// function renderState(){
-//     $("#div").text(personalInfo.name)
-// }
+getWeather(previousCity);

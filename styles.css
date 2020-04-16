@@ -7,9 +7,9 @@
 
 .navbar {
     padding: 5;
-    background-color: rgba(255, 245, 249, 0.815) !important;
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 20px;
+    background-image: url(https://i.pinimg.com/originals/af/a7/a3/afa7a37361cab6d7a729b669dae6757b.jpg);
 }
 
 .fontStyle {
@@ -20,11 +20,11 @@
 .weatherCard {
     font-weight: 600;
     font-size: 18px;
-    background-color: rgba(255, 245, 249, 0.815);
+    background-color: rgba(207, 207, 207, 0.815);
 }
 
 .fiveDayCard {
-    background-color: rgba(255, 245, 249, 0.815);
+    background-color: rgba(207, 207, 207, 0.651);
     margin: 15px;
 }
 
@@ -38,8 +38,11 @@ h1 {
     padding-left: 25px;
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
-    background-color: rgba(255, 245, 249, 0.815)
-
+    background-image: url(https://icatcare.org/app/uploads/2018/06/Layer-1704-1920x840.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: unset !important;
+    max-width: 900px;
 }
 
 .cityDate {
@@ -52,28 +55,44 @@ h1 {
     font-weight: 100;
     font-size: 20px;
     font-family: 'Montserrat', sans-serif;
+
+
     
 }
 
 #userInput { 
-    background-color: rgba(255, 245, 249, 0.815);
+    background-color: rgba(207, 207, 207, 0.815);
 }
 
 #storedCities {
-    background-color: rgba(255, 245, 249, 0.815);
     margin-right: 25px;
     margin-left: 25px;
+    border-radius: 10px;
+    border-color: black;
+    padding: 10px;
 }
 
 .searchBtn {
-    background-color: rgba(255, 245, 249, 0.815) !important;
+    background-color: rgba(207, 207, 207, 0.815) !important;
 }
 
+.btn {
+    border-radius: 3px;
+    border-color: rgba(160, 153, 170, 0.521);
+    padding: 5px;
+    margin: 5px;
+}
 
-/* body {
-    background-image: url(https://i.pinimg.com/originals/a3/06/7d/a3067db8cc83e0ebc0cae5dc5b713d62.jpg);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    
-} */
+body {
+    background-color: rgba(241, 239, 237, 0.561);
+}
 
+.searchedCities {
+    padding-left: 45px;
+    padding-top: 20px;
+}
+
+.fiveDate {
+    font-size: 20px;
+    font-weight: 800;
+}
