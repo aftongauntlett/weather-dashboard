@@ -98,3 +98,19 @@ if (currentCities) {
     }
 
 }
+
+
+// use this info to have the website load info for website launch
+
+// function getFromStorage (){
+//     var storedData = localStorage.getItem("prevoiousCity");
+//     if(personalInfo){
+//         var personalinfo = JSON.parse(storedData)}
+//         else {
+// var personalInfo ={}
+//         }
+//     }
+
+// function renderState(){
+//     $("#div").text(personalInfo.name)
+// }
