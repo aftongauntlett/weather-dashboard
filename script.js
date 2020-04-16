@@ -1,11 +1,17 @@
 $("#searchBar").on("click", function () {
     var userInput = $("#userInput").val()
     var cities = [userInput]
+    // used JSON to get array of cities
     const currentCities = JSON.parse(localStorage.getItem("cities"));
+
     if (currentCities) {
         for (i = 0; i < currentCities.length; i++) {
-            cities.push(currentCities[i])
+
+            if (i < 6) {
+                cities.push(currentCities[i])
+            }
         }
+
     }
 
     localStorage.setItem("cities", JSON.stringify(cities))
@@ -14,9 +20,13 @@ $("#searchBar").on("click", function () {
     getWeather(userInput);
 })
 
+
+// created getweather function to run the API and pull specific data everytime a city is searched
 function getWeather(cityName) {
     var APIKey = "2c10bee5201ad77237d10e6a96cc7389";
     var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + APIKey;
+    // tried adding UV API, but could not get it working
+    // var UV = "http://api.openweathermap.org/data/2.5/uvi/forecast?" + cityName + "appid=&lat=&lon=&cnt=" + APIKey;
 
     $.ajax({
         url: queryURL,
@@ -31,8 +41,6 @@ function getWeather(cityName) {
             $(".humidity").text("Humidity: " + response.list[0].main.humidity);
             // $(".uv").text("UV Index: " + );
             $(".wind").text("Wind Speed: " + response.list[0].wind.speed);
-
-
             // Converted the temp to fahrenheit
             // used math.round to get rid of the decimals in the fahrenheit 
             var tempF = Math.round((response.list[0].main.temp - 273.15) * 1.80 + 32);
@@ -41,33 +49,43 @@ function getWeather(cityName) {
             var feelsLikeF = Math.round((response.list[0].main.feels_like - 273.15) * 1.80 + 32);
             $(".feelsLikeF").text("Feels like: " + feelsLikeF + "°");
 
-            // created a for loop to generate 5 day weather data for user selected city 
+            // created a for loop to generate 5 day weather data for user selected city. Had to go into the API to find when the days switched and went with 12pm every day. (which was every 8)
+            var fiveDay = [
+                response.list[3],
+                response.list[11],
+                response.list[19],
+                response.list[27],
+                response.list[35],
+            ]
 
+            var i;
+            for (i = 0; i < fiveDay.length; i++) {
+                console.log(fiveDay[i]);
+                $("#fiveDay" + (i + 1)).append('<p class="card-text">' + moment(fiveDay[i].dt_txt).format("MMM Do, YYYY") + '</p>')
+                $("#fiveDay" + (i + 1)).append('<p class="card-text">' + fiveDay[i].main.temp + '</p>')
+                $("#fiveDay" + (i + 1)).append('<p class="card-text">' + fiveDay[i].main.humidity + '</p>')
+                $("#fiveDay" + (i + 1)).append('<p class="card-text">' + fiveDay[i].main.icon + '</p>')
 
-
+            }
         });
 
 }
-
-// calling the getweather function for each onclick city 
-
-$("#chantilly").click(function () {
-    getWeather("Chantilly");
-});
-
-$("#fairfax").click(function () {
-    getWeather("Fairfax");
-});
-
-$("#reston").click(function () {
-    getWeather("Reston");
-});
-
-$("#herndon").click(function () {
-    getWeather("Herndon");
-});
 
 // prevent default to stop the form from going to the next page
 $("form").submit(function (e) {
     e.preventDefault();
 });
+
+const currentCities = JSON.parse(localStorage.getItem("cities"));
+if (currentCities) {
+    for (i = 0; i < currentCities.length; i++) {
+        // console.log(currentCities[i])
+        const currentCity = currentCities[i]
+        $("#storedCities").append(' <button id="' + "city" + i + '" class="btn searchBtn btn-sm ml-3">' + currentCity + '</button>');
+        $("#city" + i).click(function () {
+            getWeather(currentCity);
+        });
+    }
+
+
+}

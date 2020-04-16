@@ -22,7 +22,6 @@
 
 <body class="fontStyle">
 
-
     <!-- Boostrap Navbar -->
     <!-- added dflex justify to center it -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-center">
@@ -35,18 +34,13 @@
                 <input id="userInput" class="form-control" type="search" placeholder="City" aria-label="Search">
 
                 <!-- added margin left by 3 to give it some space, look nicer -->
-                <button id="searchBar" class="btn searchBtn btn-outline-dark ml-3" type="submit">Search</button>
+                <button id="searchBar" class="btn searchBtn btn-sm ml-3" type="submit">Search</button>
             </form>
 
             <!-- Bootstrap List -->
             <!-- update this list to be a history, not pre-made -->
 
-            <div class="list-group pl-3">
-                <button id="chantilly" class="list-group-item list-group-item-action">Chantilly</button>
-                <button id="fairfax" class="list-group-item list-group-item-action">Fairfaix</button>
-                <button id="reston" class="list-group-item list-group-item-action">Reston</button>
-                <button id="herndon" class="list-group-item list-group-item-action">Herndon</button>
-            </div>
+            <div class="list-group pl-3" id="storedCities"></div>
         </div>
 
         <!-- Bootstrap Jumbotron for current information -->
@@ -68,58 +62,26 @@
 
             </div>
 
-
-
             <!-- Boostrap Card for 5 day weather -->
 
             <h1>5-day Forecast</h1>
 
             <!-- use response.list to create a for loop for your 5 day forecast -->
-            <div class="card-group">
+            <div class="card-group" id="fiveDay">
                 <div class="card fiveDayCard">
-                    <div class="card-body fiveDayOne">
-                        <p class="card-title" id="fiveDayDate"></p>
-                        <p class="card-text" id="fiveDayIcon"></p>
-                        <p class="card-text" id="fiveDayTemp"></p>
-                        <p class="card-text" id="fiveDayHumidity"></p>
-                        <p class="card-text" id="fiveDayUpdate"><small class="text-muted"></small></p>
-                    </div>
+                    <div class="card-body" id="fiveDay1"> </div>
                 </div>
                 <div class="card fiveDayCard">
-                    <div class="card-body fiveDayTwo">
-                        <p class="card-title" id="fiveDayDate"></p>
-                        <p class="card-text" id="fiveDayIcon"></p>
-                        <p class="card-text" id="fiveDayTemp"></p>
-                        <p class="card-text" id="fiveDayHumidity"></p>
-                        <p class="card-text" id="fiveDayUpdate"><small class="text-muted"></small></p>
-                    </div>
+                    <div class="card-body" id="fiveDay2"> </div>
                 </div>
                 <div class="card fiveDayCard">
-                    <div class="card-body fiveDayThree">
-                        <p class="card-title" id="fiveDayDate"></p>
-                        <p class="card-text" id="fiveDayIcon"></p>
-                        <p class="card-text" id="fiveDayTemp"></p>
-                        <p class="card-text" id="fiveDayHumidity"></p>
-                        <p class="card-text" id="fiveDayUpdate"><small class="text-muted"></small></p>
-                    </div>
+                    <div class="card-body" id="fiveDay3"> </div>
                 </div>
                 <div class="card fiveDayCard">
-                    <div class="card-body fiveDayFour">
-                        <p class="card-title" id="fiveDayDate"></p>
-                        <p class="card-text" id="fiveDayIcon"></p>
-                        <p class="card-text" id="fiveDayTemp"></p>
-                        <p class="card-text" id="fiveDayHumidity"></p>
-                        <p class="card-text" id="fiveDayUpdate"><small class="text-muted"></small></p>
-                    </div>
+                    <div class="card-body" id="fiveDay4"> </div>
                 </div>
                 <div class="card fiveDayCard">
-                    <div class="card-body fiveDayFive">
-                        <p class="card-title" id="fiveDayDate"></p>
-                        <p class="card-text" id="fiveDayIcon"></p>
-                        <p class="card-text" id="fiveDayTemp"></p>
-                        <p class="card-text" id="fiveDayHumidity"></p>
-                        <p class="card-text" id="fiveDayUpdate"><small class="text-muted"></small></p>
-                    </div>
+                    <div class="card-body" id="fiveDay5"> </div>
                 </div>
             </div>
         </div>
