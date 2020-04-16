@@ -17,9 +17,8 @@ function getWeather(cityName) {
         .then(function (response) {
 
             // use response.list to create a for loop for your 5 day forecast
-
-            $(".date").text("" + moment(response.list[0].dt_txt).format("MMM Do YYYY"));
-            $(".city").text("" + response.city.name);
+            // combined city and date to have display side by side
+            $(".cityDate").text(" " + response.city.name + " " + moment(response.list[0].dt_txt).format("(MMM Do, YYYY)"));
             $(".humidity").text("Humidity: " + response.list[0].main.humidity);
             // $(".uv").text("UV Index: " + );
             $(".wind").text("Wind Speed: " + response.list[0].wind.speed);
@@ -32,6 +31,8 @@ function getWeather(cityName) {
 
             var feelsLikeF = Math.round((response.list[0].main.feels_like - 273.15) * 1.80 + 32);
             $(".feelsLikeF").text("Feels like: " + feelsLikeF + "°");
+
+            // created a for loop to generate 5 day weather data for user selected city 
 
             var i;
             for (i = 0; i < fiveDayOne.length; i++) {

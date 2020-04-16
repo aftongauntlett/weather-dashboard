@@ -13,8 +13,7 @@
     <link rel="stylesheet" href="./styles.css">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
 
 
     <title>Weather Dashboard</title>
@@ -41,7 +40,7 @@
 
             <!-- Bootstrap List -->
             <!-- update this list to be a history, not pre-made -->
-            <div class="list-group ">
+            <div class="list-group pl-3">
                 <button id="chantilly" class="list-group-item list-group-item-action">Chantilly</button>
                 <button id="fairfax" class="list-group-item list-group-item-action">Fairfaix</button>
                 <button id="reston" class="list-group-item list-group-item-action">Reston</button>
@@ -52,16 +51,18 @@
         <!-- Bootstrap Jumbotron for current information -->
         <div class="col">
             <div class="jumbotron jumbotron-fluid">
-                <p class="date"></p>
-                <p class="city"></p>
-                <p class="tempF"></p>
-                <p class="feelsLikeF"></p>
-                <p class="humidity"></p>
-                <p class="wind"></p>
-                <!-- when UV is clicked, display a color that indicates favorable, moderate or severe -->
-                <p class="uv"></p>
-                <!-- icon representitive of current conditions -->
-                <p class="icon"></p>
+                <!-- combined city and date to have display side by side -->
+                <p class="cityDate"></p>
+                <div class="mainWeatherFont">
+                    <p class="tempF"></p>
+                    <p class="feelsLikeF"></p>
+                    <p class="humidity"></p>
+                    <p class="wind"></p>
+                    <!-- when UV is clicked, display a color that indicates favorable, moderate or severe -->
+                    <p class="uv"></p>
+                    <!-- icon representitive of current conditions -->
+                    <p class="icon"></p>
+                </div>
 
 
             </div>

@@ -43,3 +43,15 @@ h1 {
     font-size: 20px;
 }
 
+.cityDate {
+    font-size: 25px;
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+
+.mainWeatherFont {
+   font-weight: 100;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+
+}
