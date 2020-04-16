@@ -1,5 +1,14 @@
 $("#searchBar").on("click", function () {
     var userInput = $("#userInput").val()
+    var cities = [userInput]
+    const currentCities = JSON.parse(localStorage.getItem("cities"));
+    if (currentCities) {
+        for (i = 0; i < currentCities.length; i++) {
+            cities.push(currentCities[i])
+        }
+    }
+
+    localStorage.setItem("cities", JSON.stringify(cities))
 
     // created the function getweather to include the onclick cities and the user input cities together
     getWeather(userInput);
@@ -34,13 +43,6 @@ function getWeather(cityName) {
 
             // created a for loop to generate 5 day weather data for user selected city 
 
-            var i;
-            for (i = 0; i < fiveDayOne.length; i++) {
-                text += fiveDayOne.children[i] + "<br>";
-
-                // $("p").children().
-
-            }
 
 
         });
