@@ -25,7 +25,6 @@ function getWeather(cityName) {
     var APIKey = "2c10bee5201ad77237d10e6a96cc7389";
     var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + APIKey;
 
-    // var UV = "http://api.openweathermap.org/data/2.5/uvi/forecast?" + cityName + "appid=&lat=&lon=&cnt=" + APIKey;
 
     $.ajax({
         url: queryURL,
@@ -34,20 +33,46 @@ function getWeather(cityName) {
     })
         .then(function (response) {
 
+            var UV = "http://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + response.city.coord.lat + "&lon=" + response.city.coord.lon + "&cnt=";
+
+            $.ajax({
+                url: UV,
+                method: "GET"
+            })
+                .then(function (UVIndex) {
+                    $(".uv").text("UV Index: " + UVIndex.value);
+                    console.log(UVIndex)
+
+                    if (UVIndex.value < 3) {
+                        $(".uv").css("background-color", "#87e89c", "margin-right", "700px")
+                        $(".uv").css("margin-right", "700px")
+                    }
+
+                    else if (UVIndex.value > 8) {
+                        $(".uv").css("background-color", "#eb7a59", "margin-right", "700px")
+                        $(".uv").css("margin-right", "700px")
+                    }
+
+                    else {
+                        $(".uv").css("background-color", "#edd080", "margin-right", "700px")
+                        $(".uv").css("margin-right", "700px")
+                    }
+
+                })
+
             // use response.list to create a for loop for your 5 day forecast
             // combined city and date to have display side by side
             $(".cityDate").text(" " + response.city.name + " " + moment(response.list[0].dt_txt).format("(MMM Do, YYYY)"));
             $(".humidity").text("Humidity: " + response.list[0].main.humidity + " %");
-            // $(".uv").text("UV Index: " + );
             $(".wind").text("Wind Speed: " + response.list[0].wind.speed + (" MPH"));
 
             // Converted the temp to fahrenheit
             // used math.round to get rid of the decimals in the fahrenheit 
             var tempF = Math.round((response.list[0].main.temp - 273.15) * 1.80 + 32);
             $(".tempF").text("Temperature: " + tempF + ("°"));
-
             var feelsLikeF = Math.round((response.list[0].main.feels_like - 273.15) * 1.80 + 32);
             $(".feelsLikeF").text("Feels like: " + feelsLikeF + "°");
+
 
             // created a for loop to generate 5 day weather data for user selected city. Had to go into the API to find when the days switched and went with 12pm every day. (which was every 8)
             var fiveDay = [
@@ -111,3 +136,4 @@ else {
 }
 
 getWeather(previousCity);
+
