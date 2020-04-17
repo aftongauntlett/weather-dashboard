@@ -30,19 +30,26 @@
     <div class="row">
         <div class="col-12 col-md-3">
             <!-- added some padding to make it look nicer -->
-            <form class="form-inline pt-3 pb-3 pl-3">
-                <input id="userInput" class="form-control" type="search" placeholder="City" aria-label="Search">
+            <form class="form-inline pl-3">
+                <div class="row ml-3">
+                    <input id="userInput" class="form-control col-7" type="search" placeholder="City"
+                        aria-label="Search">
 
-                <!-- added margin left by 3 to give it some space, look nicer -->
-                <button id="searchBar" class="btn searchBtn btn-sm ml-3" type="submit">Search</button>
+                    <!-- added margin left by 3 to give it some space, look nicer -->
+                    <button id="searchBar" class="btn col-3 searchBtn btn-sm ml-3" type="submit">Search</button>
+
+                </div>
             </form>
 
             <!-- Bootstrap List -->
             <!-- update this list to be a history, not pre-made -->
             <!-- moved this button to JS -->
-
-            <p class="searchedCities">Previously searched cities:</p>
-            <div class="list-group" id="storedCities"></div>
+            <div class="d-flex justify-content-center">
+                <div style="text-align: center;">
+                    <p class="searchedCities">Previously searched cities:</p>
+                    <div class="list-group" id="storedCities"></div>
+                </div>
+            </div>
         </div>
 
         <!-- Bootstrap Jumbotron for current information -->
