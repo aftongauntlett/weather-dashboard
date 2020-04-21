@@ -33,7 +33,7 @@ function getWeather(cityName) {
     })
         .then(function (response) {
 
-            var UV = "http://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + response.city.coord.lat + "&lon=" + response.city.coord.lon + "&cnt=";
+            var UV = "https://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + response.city.coord.lat + "&lon=" + response.city.coord.lon + "&cnt=";
 
             $.ajax({
                 url: UV,
