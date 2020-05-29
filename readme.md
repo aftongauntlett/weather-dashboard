@@ -1,12 +1,10 @@
 # Weather Dashboard
 
 ![Github](https://img.shields.io/github/followers/aftongauntlett?style=for-the-badge&logo=appveyor")
-![GitHub commit activity](https://img.shields.io/github/commit-activity/y/aftongauntlett/weather-dashboard?style=for-the-badge)
 
+**Github Repo:** https://github.com/aftongauntlett/weather-dashboard
 
-**Github Repo:** https://github.com/aftongauntlett
-
-**Deployed:** http://aftongauntlett.com/
+**Deployed:** https://aftongauntlett.github.io/weather-dashboard/
 
 
 ## Description
