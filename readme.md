@@ -3,16 +3,13 @@
 ![Github](https://img.shields.io/github/followers/aftongauntlett?style=for-the-badge&logo=appveyor")
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/aftongauntlett/weather-dashboard?style=for-the-badge)
 
-## API Resources
-https://openweathermap.org/api
-
 
 **Github Repo:** https://github.com/aftongauntlett
 
 **Deployed:** http://aftongauntlett.com/
 
 
-## The purpose of this site
+## Description
 Created a weather dashboard that pulls current weather information for location requested by user. Stores 7  previously searched cities on the side bar. 
 
 ## Tech Stack
@@ -22,6 +19,10 @@ Created a weather dashboard that pulls current weather information for location 
 * Bootstrap
 * JavaScript
 * API
+
+## API Resources
+https://openweathermap.org/api
+
 
 ## Screenshot:
 
